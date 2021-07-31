@@ -1,0 +1,33 @@
+#--------------------------------------------------------------
+# GitHub Action WorkFlow Basics
+#
+# Version     Date       Info
+#  1.0        2021       Initial Version
+#
+# Made by bagrat Harutyunyan 2021
+#--------------------------------------------------------------
+
+
+name: My-GitHubActionBasics-CI
+
+on:
+  push:
+    branches: 
+      - master
+
+
+jobs:
+  my_test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Print Hello World Massage in testing
+      run : echo "Hello World from testing"
+      
+  my_deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Print Hello World Massage in Deploy
+      run : echo "Hello World from Deploy"
+   
