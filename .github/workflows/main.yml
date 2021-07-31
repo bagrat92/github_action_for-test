@@ -9,6 +9,9 @@
 
 
 name: My-GitHubActionBasics-CI
+env:
+  APPLICATION_NANE     : " MyFlask"
+  DEPLOY_PACKEGE_NAME  : "flask-deploy-ver-${{ github.sha }}"
 
 on:
   push:
@@ -23,6 +26,21 @@ jobs:
     steps:
     - name: Print Hello World Massage in testing
       run : echo "Hello World from testing"
+      
+    - name: Execure few commands
+      run:
+        echo "Hello World"
+        echo "Hola amiga"
+        echo "Application name:${{ env.APPLICATION_NAME }} "
+      
+    - name: List current folder
+      run: ls -lah
+      
+    - name: Git clone my repo
+      uses: actions/checkout@v1
+      
+    - name: List current folder
+      run: ls -lah
       
   my_deploy:
     runs-on: ubuntu-latest
