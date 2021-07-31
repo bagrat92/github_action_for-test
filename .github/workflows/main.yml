@@ -13,7 +13,7 @@ name: My-GitHubActionBasics-CI
 on:
   push:
     branches: 
-      - master
+      - main
 
 
 jobs:
